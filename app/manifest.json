@@ -1,6 +1,6 @@
 {
-  "name": "銘柄分析",
-  "short_name": "銘柄分析",
+  "name": "配当の木",
+  "short_name": "配当の木",
   "lang": "ja",
   "start_url": "./",
   "scope": "./",
