@@ -33,11 +33,28 @@
         flex: 1;
       }
     </style>
+    <!-- 丸い字（アイコンの丸い感じに合わせる。2026-11-06 本人「1〜6ぜんぶ」）。字が届くまでは、ふつうの字で出す -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" />
+    <style>
+      #root, #root * { font-family: 'M PLUS Rounded 1c', -apple-system, 'Hiragino Sans', 'Yu Gothic UI', sans-serif !important; }
+      /* 開くときの一瞬の画面：アプリの中身が出たら、うすくして消す */
+      #開く画面 {
+        position: fixed; inset: 0; z-index: 10; background: #7b5cb8;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        transition: opacity .35s ease;
+      }
+      #開く画面 img { width: 132px; height: 132px; border-radius: 66px; border: 5px solid #4a3566; }
+      #開く画面 div { margin-top: 16px; color: #fff; font: 800 24px 'M PLUS Rounded 1c', -apple-system, 'Hiragino Sans', sans-serif; letter-spacing: .04em; }
+      #root:not(:empty) + #開く画面 { opacity: 0; pointer-events: none; }
+    </style>
   <link rel="icon" href="/meigara-data/app/favicon.ico"/></head>
 
   <body>
     <noscript>このアプリを使うには、ブラウザの JavaScript（ページを動かすしくみ）をオンにしてください。</noscript>
     <div id="root"></div>
-  <script src="/meigara-data/app/_expo/static/js/web/index-f575a61cb35423773e9c024ae85b7d3f.js" defer></script>
+    <div id="開く画面" aria-hidden="true"><img src="icon-192.png" alt="" /><div>にょろ配当帳</div></div>
+  <script src="/meigara-data/app/_expo/static/js/web/index-2c3f1e8796cae79a1f97fb2b985de847.js" defer></script>
 </body>
 </html>
